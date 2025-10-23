@@ -1,0 +1,17 @@
+# Backup accidental python file that lived in templates/
+# Moved here to avoid import conflicts with voley_app.views module.
+
+# Original contents saved for reference.
+
+# voley_app/views.py
+
+from django.shortcuts import render
+
+
+def inicio_view(request):
+    # Asegúrate de usar la ruta completa si usas la estructura anidada de plantillas
+    return render(request, 'voley_app/inicio.html', {})
+
+def login_view(request): # <--- ¡ESTA FUNCIÓN DEBE EXISTIR Y ESTAR ESCRITA ASÍ!
+    # Asegúrate de usar la ruta completa si usas la estructura anidada de plantillas
+    return render(request, 'voley_app/login.html', {})

@@ -1,0 +1,93 @@
+/* Configuración básica y tipografía */
+:root {
+    --primary-color: #007bff; /* Azul */
+    --secondary-color: #ffffff; /* Blanco */
+    --dark-overlay: rgba(0, 0, 0, 0.7); /* Capa oscura */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal con la imagen de fondo */
+.hero-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Nota: El URL aquí debe ser la ruta directa en el CSS.
+       Asegúrate de poner la imagen en static/img/voley_background.jpg */
+    background-image: linear-gradient(var(--dark-overlay), var(--dark-overlay)), 
+                      url("../img/voley_background.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contenido centrado y estructura de texto/botones */
+.hero-content {
+    text-align: center;
+    color: var(--secondary-color);
+    max-width: 900px;
+    padding: 20px;
+}
+
+.logo-icon {
+    font-size: 5rem; 
+    margin-bottom: 20px;
+    /* Estilo visual para el icono */
+    display: inline-block;
+    padding: 10px;
+    background-color: transparent;
+    border: 5px solid var(--secondary-color);
+    border-radius: 50%;
+}
+
+h1 {
+    font-size: 3.5rem; 
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos de botones base */
+.btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para el botón principal (Iniciar Sesión) */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón secundario (Registrarse) */
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #333; 
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}

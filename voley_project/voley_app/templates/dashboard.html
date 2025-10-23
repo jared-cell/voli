@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de Control - Voleibol</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">Voleibol</div>
+      <button class="hamburger" id="btn-hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+    <div class="nav-right">
+        <div class="user">
+        <img class="avatar" src="{% static 'img/avatar-placeholder.png' %}" alt="Avatar" />
+        <span class="username">{{ username|default:"Usuario" }}</span>
+        <form method="post" action="{% url 'logout' %}" class="logout-form" id="logout-form">{% csrf_token %}
+          <button class="logout" type="button" id="btn-logout">Cerrar sesión</button>
+        </form>
+        <button id="theme-toggle" class="btn btn-ghost" aria-pressed="false" title="Alternar tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav-list">
+        <a href="#" class="nav-item active">
+          <span class="icon"><img src="{% static 'img/icon-users.svg' %}" alt="Mis Equipos"/></span>
+          <span class="text">Mis Equipos</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="icon"><img src="{% static 'img/icon-calendar.svg' %}" alt="Mis Partidos"/></span>
+          <span class="text">Mis Partidos</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="icon"><img src="{% static 'img/icon-bell.svg' %}" alt="Notificaciones"/></span>
+          <span class="text">Notificaciones</span>
+          <span class="badge">2</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="icon"><img src="{% static 'img/icon-user.svg' %}" alt="Mi Perfil"/></span>
+          <span class="text">Mi Perfil</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="content-header">
+        <div>
+          <h1>Bienvenido, {{ username|default:"Usuario" }}!</h1>
+          <p class="subtitle">Aquí tienes un resumen de tu actividad.</p>
+        </div>
+        <div>
+          <button class="btn btn--primary btn-cta">Ver detalles del torneo <span class="arrow">→</span></button>
+        </div>
+      </div>
+
+      <section class="cards">
+        <article class="card">
+          <div class="card-icon"><img src="{% static 'img/icon-users.svg' %}" alt="Equipo"/></div>
+          <div class="card-body">
+            <h3>Equipo Registrado</h3>
+            <p class="muted">Los Ases del Voleibol</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon"><img src="{% static 'img/icon-calendar.svg' %}" alt="Partido"/></div>
+          <div class="card-body">
+            <h3>Próximo Partido</h3>
+            <p class="muted">vs. Los Rematadores</p>
+            <p class="small">25 de Octubre, 18:00</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon"><img src="{% static 'img/icon-users.svg' %}" alt="Estado"/></div>
+          <div class="card-body">
+            <h3>Estado de Inscripción</h3>
+            <p class="status"><span class="dot"></span> Confirmada</p>
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="{% static 'js/dashboard.js' %}"></script>
+  <!-- Logout confirmation modal -->
+  <div id="logout-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel card">
+      <h3>Confirmar cierre de sesión</h3>
+      <p class="muted">¿Estás seguro que quieres cerrar sesión?</p>
+      <div class="modal-actions">
+        <button id="confirm-logout" class="btn btn--primary">Sí, cerrar sesión</button>
+        <button id="cancel-logout" class="btn btn--secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

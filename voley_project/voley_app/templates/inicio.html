@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo de Voleibol</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_styles.css' %}"> <!-- mejoras visuales para hero -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- heredado: conserva estilos del hero -->
+</head>
+<body>
+    <main class="hero-container">
+        <div class="hero-content container">
+            <div class="logo-icon">🏐</div>
+            <h1>¡Organiza, juega y gana en tu torneo favorito!</h1>
+            <p class="muted">Crea tus torneos, administra equipos y acompaña cada partido.</p>
+            <div class="cta-buttons">
+                <a href="{% url 'login' %}" class="btn btn-primary">Iniciar Sesión</a>
+                <a href="{% url 'register' %}" class="btn btn-secondary">Registrarse</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

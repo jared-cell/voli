@@ -1,0 +1,4 @@
+<!-- Este archivo era un .py accidental dentro de templates y provocaba que Django importara el módulo equivocado. -->
+<!-- Se preservó una copia en views.py.bak y aquí dejamos un marcador HTML. -->
+<!DOCTYPE html>
+<html><body><p>Archivo de plantilla placeholder para evitar import conflicts. El original está en views.py.bak</p></body></html>

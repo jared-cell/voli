@@ -1,0 +1,15 @@
+/* Pulido para login y registro - se integra con base.css variables */
+.auth-card{padding:36px;max-width:520px}
+.auth-card h2{font-size:1.6rem;margin-bottom:4px}
+.auth-card .subtitle{margin-bottom:18px}
+.input{border:1px solid rgba(16,24,40,0.06);padding:12px;border-radius:10px;background:var(--panel);width:100%}
+.input::placeholder{color:#9aa4b2}
+.input:focus{box-shadow:0 8px 24px rgba(2,6,23,0.06);outline:none;border-color:var(--primary)}
+.login-card{background:transparent;box-shadow:none}
+.auth-wrapper{background:transparent;padding:48px 18px}
+.login-card .subtitle{color:var(--muted)}
+.messages{margin-bottom:12px}
+.message{padding:10px;border-radius:8px;background:#fffbe6;border:1px solid #ffe58f;color:#7a4f01}
+.forgot-password{text-align:right}
+.forgot-password a{color:var(--primary)}
+.signup-link{margin-top:8px}
